@@ -13,6 +13,9 @@
 		842995D22A5428B8001A321B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842995D12A5428B8001A321B /* Extensions.swift */; };
 		842995D42A542B5C001A321B /* NotificationsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842995D32A542B5C001A321B /* NotificationsCell.swift */; };
 		842995D62A54302D001A321B /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842995D52A54302D001A321B /* MessageCell.swift */; };
+		842995D82A543546001A321B /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842995D72A543546001A321B /* TopBar.swift */; };
+		842995DA2A543653001A321B /* LineCustome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842995D92A543653001A321B /* LineCustome.swift */; };
+		842995DC2A54390F001A321B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842995DB2A54390F001A321B /* MainView.swift */; };
 		84C0B1372A52690B008576AE /* TwitterCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0B1362A52690B008576AE /* TwitterCloneApp.swift */; };
 		84C0B1392A52690B008576AE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0B1382A52690B008576AE /* ContentView.swift */; };
 		84C0B13B2A52690D008576AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C0B13A2A52690D008576AE /* Assets.xcassets */; };
@@ -34,6 +37,9 @@
 		842995D12A5428B8001A321B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		842995D32A542B5C001A321B /* NotificationsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsCell.swift; sourceTree = "<group>"; };
 		842995D52A54302D001A321B /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		842995D72A543546001A321B /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
+		842995D92A543653001A321B /* LineCustome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineCustome.swift; sourceTree = "<group>"; };
+		842995DB2A54390F001A321B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		84C0B1332A52690B008576AE /* TwitterClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C0B1362A52690B008576AE /* TwitterCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterCloneApp.swift; sourceTree = "<group>"; };
 		84C0B1382A52690B008576AE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -167,6 +173,7 @@
 			children = (
 				84C0B1612A53DDF4008576AE /* MutilineTextField.swift */,
 				842995CB2A5418AB001A321B /* SearchBar.swift */,
+				842995D92A543653001A321B /* LineCustome.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -219,6 +226,8 @@
 			isa = PBXGroup;
 			children = (
 				84C0B1542A528DC4008576AE /* Home.swift */,
+				842995D72A543546001A321B /* TopBar.swift */,
+				842995DB2A54390F001A321B /* MainView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -298,10 +307,13 @@
 				842995CA2A54157A001A321B /* SearchCell.swift in Sources */,
 				84C0B1622A53DDF4008576AE /* MutilineTextField.swift in Sources */,
 				84C0B1602A53DA57008576AE /* CreateTweetView.swift in Sources */,
+				842995DC2A54390F001A321B /* MainView.swift in Sources */,
 				842995CE2A542461001A321B /* SearchUserCell.swift in Sources */,
 				84C0B1592A529A3A008576AE /* SearchView.swift in Sources */,
 				842995CC2A5418AB001A321B /* SearchBar.swift in Sources */,
 				84C0B1392A52690B008576AE /* ContentView.swift in Sources */,
+				842995D82A543546001A321B /* TopBar.swift in Sources */,
+				842995DA2A543653001A321B /* LineCustome.swift in Sources */,
 				84C0B1572A529A2A008576AE /* Feed.swift in Sources */,
 				84C0B1552A528DC4008576AE /* Home.swift in Sources */,
 				842995D42A542B5C001A321B /* NotificationsCell.swift in Sources */,
