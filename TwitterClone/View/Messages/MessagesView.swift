@@ -9,7 +9,11 @@ import SwiftUI
 
 struct MessagesView: View {
     var body: some View {
-        Text("MessageView")
+        VStack(spacing: 10, content: {
+                List(1..<11){i in
+                    MessageCell()
+                }
+        })
     }
 }
 
