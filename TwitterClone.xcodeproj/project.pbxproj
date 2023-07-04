@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		842995CA2A54157A001A321B /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842995C92A54157A001A321B /* SearchCell.swift */; };
+		842995CC2A5418AB001A321B /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842995CB2A5418AB001A321B /* SearchBar.swift */; };
+		842995CE2A542461001A321B /* SearchUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842995CD2A542461001A321B /* SearchUserCell.swift */; };
+		842995D22A5428B8001A321B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842995D12A5428B8001A321B /* Extensions.swift */; };
 		84C0B1372A52690B008576AE /* TwitterCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0B1362A52690B008576AE /* TwitterCloneApp.swift */; };
 		84C0B1392A52690B008576AE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0B1382A52690B008576AE /* ContentView.swift */; };
 		84C0B13B2A52690D008576AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C0B13A2A52690D008576AE /* Assets.xcassets */; };
@@ -22,6 +26,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		842995C92A54157A001A321B /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		842995CB2A5418AB001A321B /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		842995CD2A542461001A321B /* SearchUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserCell.swift; sourceTree = "<group>"; };
+		842995D12A5428B8001A321B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		84C0B1332A52690B008576AE /* TwitterClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C0B1362A52690B008576AE /* TwitterCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterCloneApp.swift; sourceTree = "<group>"; };
 		84C0B1382A52690B008576AE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -130,6 +138,7 @@
 		84C0B14A2A528D23008576AE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				842995D12A5428B8001A321B /* Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -153,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				84C0B1612A53DDF4008576AE /* MutilineTextField.swift */,
+				842995CB2A5418AB001A321B /* SearchBar.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -184,6 +194,8 @@
 			isa = PBXGroup;
 			children = (
 				84C0B1582A529A3A008576AE /* SearchView.swift */,
+				842995C92A54157A001A321B /* SearchCell.swift */,
+				842995CD2A542461001A321B /* SearchUserCell.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -276,15 +288,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				84C0B1642A53FB9F008576AE /* TweetCellView.swift in Sources */,
+				842995CA2A54157A001A321B /* SearchCell.swift in Sources */,
 				84C0B1622A53DDF4008576AE /* MutilineTextField.swift in Sources */,
 				84C0B1602A53DA57008576AE /* CreateTweetView.swift in Sources */,
+				842995CE2A542461001A321B /* SearchUserCell.swift in Sources */,
 				84C0B1592A529A3A008576AE /* SearchView.swift in Sources */,
+				842995CC2A5418AB001A321B /* SearchBar.swift in Sources */,
 				84C0B1392A52690B008576AE /* ContentView.swift in Sources */,
 				84C0B1572A529A2A008576AE /* Feed.swift in Sources */,
 				84C0B1552A528DC4008576AE /* Home.swift in Sources */,
 				84C0B15E2A529A6E008576AE /* MessagesView.swift in Sources */,
 				84C0B1372A52690B008576AE /* TwitterCloneApp.swift in Sources */,
 				84C0B15B2A529A4E008576AE /* NotificationsView.swift in Sources */,
+				842995D22A5428B8001A321B /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
