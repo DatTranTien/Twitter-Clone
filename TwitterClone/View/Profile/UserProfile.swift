@@ -28,7 +28,7 @@ struct UserProfile: View {
                                 Image("logo")
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
-                                    .frame(width: UIScreen.main.bounds.width, height: minY > 0  ?180+minY:0, alignment: .center)
+                                    .frame(width: getRect().width, height: minY > 0  ?180+minY:0, alignment: .center)
                                     .cornerRadius(0)
                                 BlurView().opacity(0.8)
                                 
@@ -70,58 +70,75 @@ struct UserProfile: View {
                                     .background(Capsule().stroke(Color.blue, lineWidth: 1.5))
                             })
                         }
-                    }.padding(.top, -25)
-                        .padding(.bottom, -10)
-                    
-                    VStack(alignment: .leading, spacing: 8, content: {
-                        Text("Cem")
-                            .font(.title2)
-                            .fontWeight(.bold)
-                            .foregroundColor(.primary)
                         
-                        Text("@Cem_salta")
-                            .foregroundColor(.gray)
-                        
-                        Text("Được dịch từ tiếng Anh-Trong xuất bản và thiết kế đồ họa, Lorem ipsum là một văn bản giữ chỗ thường được sử dụng để thể hiện hình thức trực quan của tài liệu hoặc kiểu chữ mà không dựa vào nội dung có ý nghĩa. Lorem ipsum có thể được sử dụng làm trình giữ chỗ trước khi có bản sao cuối cùng.")
-                        
-                        HStack(spacing: 5, content: {
-                            Text("12").foregroundColor(.primary)
-                                .fontWeight(.semibold)
-                            
-                            Text("680")
+                        VStack(alignment: .leading, spacing: 8, content: {
+                            Text("Cem")
+                                .font(.title2)
+                                .fontWeight(.bold)
                                 .foregroundColor(.primary)
-                                .fontWeight(.semibold)
-                                .padding(.leading,10)
                             
-                            Text("Following").foregroundColor(.gray)
-                        })
-                    })
-                    VStack(spacing: 0, content: {
-                        ScrollView(.horizontal, showsIndicators: false, content: {
-                            HStack(spacing: 0, content: {
-                                TabButton(title: "Tweets", currentTab: $currentTab, animation: animation)
-                                TabButton(title: "Tweets & Likes", currentTab: $currentTab, animation: animation)
-                                TabButton(title: "Media", currentTab: $currentTab, animation: animation)
-                                TabButton(title: "Likes", currentTab: $currentTab, animation: animation)
+                            Text("@Cem_salta")
+                                .foregroundColor(.gray)
+                            
+                            Text("Được dịch từ tiếng Anh-Trong xuất bản và thiết kế đồ họa, Lorem ipsum là một văn bản giữ chỗ thường được sử dụng để thể hiện hình thức trực quan của tài liệu hoặc kiểu chữ mà không dựa vào nội dung có ý nghĩa. Lorem ipsum có thể được sử dụng làm trình giữ chỗ trước khi có bản sao cuối cùng.")
+                            
+                            HStack(spacing: 5, content: {
+                                Text("12").foregroundColor(.primary)
+                                    .fontWeight(.semibold)
+                                
+                                Text("680")
+                                    .foregroundColor(.primary)
+                                    .fontWeight(.semibold)
+                                    .padding(.leading,10)
+                                
+                                Text("Following").foregroundColor(.gray)
                             })
                         })
-                        Divider()
-                    })
-                    .padding(.top,30)
-                    .background(Color.white)
-                    .offset(y: tabBarOffset < 90 ? -tabBarOffset+90 : 0)
-                    .overlay(
-                        GeometryReader {proxy -> Color in
-                            let minY = proxy.frame(in: .global).minY
+                        VStack(spacing: 0, content: {
+                            ScrollView(.horizontal, showsIndicators: false, content: {
+                                HStack(spacing: 0, content: {
+                                    TabButton(title: "Tweets", currentTab: $currentTab, animation: animation)
+                                    TabButton(title: "Tweets & Likes", currentTab: $currentTab, animation: animation)
+                                    TabButton(title: "Media", currentTab: $currentTab, animation: animation)
+                                    TabButton(title: "Likes", currentTab: $currentTab, animation: animation)
+                                })
+                            })
+                            Divider()
+                        })
+                        .padding(.top,30)
+                        .background(Color.white)
+                        .offset(y: tabBarOffset < 90 ? -tabBarOffset+90 : 0)
+                        .overlay(
+                            GeometryReader {proxy -> Color in
+                                let minY = proxy.frame(in: .global).minY
+                                
+                                DispatchQueue.main.async {
+                                    self.tabBarOffset = minY
+                                }
+                                return Color.clear
+                            }.frame(width: 0, height: 0)
+                            , alignment: .top
+                        ).zIndex(1)
+                    
+                        VStack(spacing:18, content: {
+                            TweetCellView(tweet: "Hey Dat",tweetImage: "logo")
                             
-                            DispatchQueue.main.async {
-                                self.tabBarOffset = minY
+                            Divider()
+                            ForEach(0..<20, id: \.self){
+                                _ in
+                                TweetCellView(tweet: sampleText)
+                                Divider()
                             }
-                            return Color.clear
-                        }.frame(width: 0, height: 0)
-                        , alignment: .top
-                    ).zIndex(1)
-                
+                        })
+                        .padding(.top)
+                        .zIndex(0)
+                    }
+                    .padding(.horizontal)
+                    .zIndex(-offset > 80 ? 0: 1)
+//                    .padding(.top, -25)
+//                        .padding(.bottom, -10)
+                    
+                    
 //                .overlay(content: <#T##() -> View#>)
 //                .overlay(
 //                    GeometryReader {proxy -> Color in
@@ -137,6 +154,7 @@ struct UserProfile: View {
                     
             }
         }
+            .ignoresSafeArea(.all,edges: .top)
     }
     func bluViewOpacity() -> Double {
         let progress = -(offset + 80)/150
