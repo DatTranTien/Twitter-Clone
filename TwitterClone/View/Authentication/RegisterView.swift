@@ -11,10 +11,13 @@ struct RegisterView: View {
     @State var name = ""
     @State var email = ""
     @State var passsword = ""
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
         VStack{
                 HStack{
-                    Button(action: {}, label: {
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }, label: {
                         Text("Cancel")
                             .foregroundColor(.blue)
                     })
@@ -52,7 +55,9 @@ struct RegisterView: View {
                                 .frame(width: 60, height: 30,alignment: .center)
                                 .foregroundColor(.blue)
                                 .overlay(
-                                Text("Next")
+                                    NavigationLink(destination: LoginView().navigationBarHidden(true)){
+                                        Text("Next")
+                                    }
                                     .foregroundColor(.white)
                                 )
                         })

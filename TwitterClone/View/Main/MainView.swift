@@ -18,7 +18,8 @@ struct MainView: View {
                     VStack{
                         TopBar(x: $x)
                         Home()
-                    }.onTapGesture {
+                    }
+                    .onTapGesture {
                         withAnimation{
                             x = -width
                         }
